@@ -1,0 +1,14 @@
+{
+  "Nome": "Paulo",
+  "Idade": 30,
+  "Email": "paulo@example.com",
+  "Mundial": false,
+  "Frutas": ["Maçã", "Pera", "Limão", "Tomate"],
+  "Endereço": {
+    "Rua": "Barueri",
+    "Número": 567,
+    "Bairro": "Nova Barueri",
+    "Cidade": "Barueri",
+    "Estado": "SP"
+  }
+}

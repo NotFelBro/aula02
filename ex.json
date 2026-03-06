@@ -1,0 +1,30 @@
+{
+  "Nome": "Felipe",
+  "Idade": 25,
+  "Empregado": true,
+  "Email": "delimafelipe291@gmail.com",
+  "Telefone": "11987654321",
+
+  "Endereço": {
+    "Rua": "Rua Monte Azul Paulista",
+    "Número": 250,
+    "Bairro": "Parque Planalto",
+    "Municipio": "Carapicuíba",
+    "Cidade": "São Paulo",
+    "Estado": "SP"
+  },
+  "Linguagens de Programação": ["Python", "JavaScript", "Java", "C++"],
+  "Hobbies": ["Programação", "Jogos", "Música", "Esportes"],
+  "Experiência Profissional": [
+    {
+      "Empresa": "Tech Solutions",
+      "Cargo": "Desenvolvedor de Software",
+      "Período": "2019-2022"
+    },
+    {
+      "Empresa": "Web Innovators",
+      "Cargo": "Analista de Sistemas",
+      "Período": "2022-Presente"
+    }
+  ]
+}
