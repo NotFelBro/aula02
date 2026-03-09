@@ -3,9 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nome site</title>
+    <title>Login - Trello Clone</title>
     <link rel="stylesheet" href="projeto.css" />
     <script defer src="projeto.js"></script>
   </head>
-  <body></body>
+  <body>
+    <div class="login-container">
+      <div class="tabs">
+        <button class="tab-button active" onclick="showTab('login')">
+          Login
+        </button>
+        <button class="tab-button" onclick="showTab('register')">
+          Cadastre-se
+        </button>
+      </div>
+
+      <div id="login-tab" class="tab-content active">
+        <h2>Login</h2>
+        <form id="login-form">
+          <input type="email" id="login-email" placeholder="Email" required />
+          <input
+            type="password"
+            id="login-password"
+            placeholder="Senha"
+            required
+          />
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+
+      <div id="register-tab" class="tab-content">
+        <h2>Cadastre-se</h2>
+        <form id="register-form">
+          <input type="text" id="register-name" placeholder="Nome" required />
+          <input
+            type="email"
+            id="register-email"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="password"
+            id="register-password"
+            placeholder="Senha"
+            required
+          />
+          <input
+            type="password"
+            id="register-confirm-password"
+            placeholder="Confirmar Senha"
+            required
+          />
+          <button type="submit">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
