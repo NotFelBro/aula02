@@ -29,8 +29,12 @@ document.getElementById("login-form").addEventListener("submit", function (e) {
   const users = JSON.parse(localStorage.getItem("users")) || [];
   const user = users.find((u) => u.email === email && u.password === password);
 
+  // Se o usuário for encontrado, exibe uma mensagem de sucesso e redireciona para a página principal do Trello
+
   if (user) {
     alert("Login bem-sucedido! Bem-vindo, " + user.name);
+    window.open("página.html", "_blank");
+
     // Aqui você pode redirecionar para a página principal do Trello
   } else {
     alert("Email ou senha incorretos.");

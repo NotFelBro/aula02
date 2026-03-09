@@ -37,7 +37,7 @@ body {
 
 .tab-button.active {
   background: white;
-  border-bottom: 2px solid #667eea;
+  border-bottom: 1px solid #667eea;
 }
 
 .tab-content {
@@ -64,6 +64,7 @@ input {
 button[type="submit"] {
   margin-top: 20px;
   padding: 10px;
+  width: 390px;
   background: #667eea;
   color: white;
   border: none;
