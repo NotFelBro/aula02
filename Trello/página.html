@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Página Principal - ShopWeb</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="página.css" />
     <script defer src="página.js"></script>
   </head>
@@ -601,3 +602,73 @@
               Fechar
             </button>
           </di
+=======
+    <link rel="stylesheet" href="login.css" />
+    <script defer src="página.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h1 id="site-title">ShopWeb</h1>
+      <button id="about-btn">Sobre o site</button>
+    </div>
+    <div class="products-container">
+      <h2>Produtos Disponíveis</h2>
+      <div class="products-grid">
+        <div class="product">
+          <h3>Produto 1</h3>
+          <p>Descrição do produto 1.</p>
+          <p>Preço: R$ 50,00</p>
+          <button class="buy-btn">Comprar</button>
+        </div>
+        <div class="product">
+          <h3>Produto 2</h3>
+          <p>Descrição do produto 2.</p>
+          <p>Preço: R$ 75,00</p>
+          <button class="buy-btn">Comprar</button>
+        </div>
+        <div class="product">
+          <h3>Produto 3</h3>
+          <p>Descrição do produto 3.</p>
+          <p>Preço: R$ 100,00</p>
+          <button class="buy-btn">Comprar</button>
+        </div>
+        <div class="product out-of-stock">
+          <h3>Produto 4</h3>
+          <p>Descrição do produto 4.</p>
+          <p>Preço: R$ 60,00</p>
+          <button class="buy-btn" disabled>Sem Estoque</button>
+        </div>
+        <div class="product out-of-stock">
+          <h3>Produto 5</h3>
+          <p>Descrição do produto 5.</p>
+          <p>Preço: R$ 80,00</p>
+          <button class="buy-btn" disabled>Sem Estoque</button>
+        </div>
+        <div class="product out-of-stock">
+          <h3>Produto 6</h3>
+          <p>Descrição do produto 6.</p>
+          <p>Preço: R$ 120,00</p>
+          <button class="buy-btn" disabled>Sem Estoque</button>
+        </div>
+      </div>
+    </div>
+    <div id="about-modal" class="modal">
+      <div class="modal-content">
+        <p>Este é um site disposto a vender produtos na internet, sinta-se bem-vindo e confortável para explorar nossas vendas.</p>
+        <button id="close-modal">Sair</button>
+      </div>
+    </div>
+    <div id="product-modal" class="modal">
+      <div class="modal-content product-details">
+        <h2 id="product-title"></h2>
+        <p id="product-description"></p>
+        <p><strong>Modelo:</strong> <span id="product-model"></span></p>
+        <p><strong>Preço:</strong> <span id="product-price"></span></p>
+        <p><strong>Desconto na primeira compra:</strong> 10% off</p>
+        <button id="confirm-buy">Comprar</button>
+        <button id="close-product-modal">Sair</button>
+      </div>
+    </div>
+  </body>
+</html>
+>>>>>>> c263d0b (Desenvolvimento da página principal da loja.)

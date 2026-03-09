@@ -12,7 +12,11 @@ body {
 
 /* Espaço para a barra lateral */
 
+<<<<<<< HEAD
 .barra-lateral {
+=======
+.sidebar {
+>>>>>>> c263d0b (Desenvolvimento da página principal da loja.)
   position: fixed;
   left: 0;
   top: 0;
@@ -100,11 +104,16 @@ button[type="submit"]:hover {
     transform 0.3s ease,
     text-shadow 0.3s ease;
 }
+<<<<<<< HEAD
 #site-titulo:hover {
+=======
+#site-title:hover {
+>>>>>>> c263d0b (Desenvolvimento da página principal da loja.)
   transform: scale(1.1);
   text-shadow: 0 0 10px rgb(255, 255, 255);
 }
 
+<<<<<<< HEAD
 /* Tela de responsividade */
 @media (max-width: 768px) {
   body {
@@ -472,12 +481,28 @@ button[type="submit"]:hover {
 .barra-lateral button {
   display: block;
   margin-top: 16px;
+=======
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 200px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.sidebar button {
+  margin-top: 20px;
+>>>>>>> c263d0b (Desenvolvimento da página principal da loja.)
   padding: 10px;
   background: rgba(255, 255, 255, 0.2);
   color: white;
   border: 1px solid white;
   border-radius: 5px;
   cursor: pointer;
+<<<<<<< HEAD
   font-size: 14px;
   width: 100%;
   text-align: left;
@@ -487,3 +512,137 @@ button[type="submit"]:hover {
 .barra-lateral button:hover {
   background: rgba(255, 255, 255, 0.4);
 }
+=======
+  font-size: 16px;
+}
+
+.sidebar button:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.modal-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+#close-modal {
+  padding: 10px 20px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#close-modal:hover {
+  background: #5a6fd8;
+}
+
+.products-container {
+  margin-left: 200px;
+  padding: 20px;
+  text-align: center;
+}
+
+.products-container h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.product {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.product h3 {
+  margin-top: 0;
+}
+
+.product p {
+  margin: 10px 0;
+}
+
+.buy-btn {
+  padding: 10px 20px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.buy-btn:hover:not(:disabled) {
+  background: #5a6fd8;
+}
+
+.buy-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.out-of-stock {
+  opacity: 0.6;
+}
+
+.product-details {
+  text-align: left;
+  max-width: 600px;
+}
+
+.product-details h2 {
+  margin-top: 0;
+}
+
+.product-details p {
+  margin: 10px 0;
+}
+
+#confirm-buy, #close-product-modal {
+  padding: 10px 20px;
+  margin: 10px 5px 0 0;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#confirm-buy:hover, #close-product-modal:hover {
+  background: #5a6fd8;
+}
+>>>>>>> c263d0b (Desenvolvimento da página principal da loja.)

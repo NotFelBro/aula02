@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // ===================== DADOS DOS PRODUTOS =====================
 const products = [
   {
@@ -683,3 +684,73 @@ document.getElementById("confirm-buy").addEventListener("click", function () {
   document.getElementById("modelo-produto").style.display = "none";
   alert(titulo + " adicionado ao carrinho!");
 });
+=======
+// Modal "Sobre o site"
+document.getElementById("about-btn").addEventListener("click", function() {
+  document.getElementById("about-modal").style.display = "block";
+});
+
+document.getElementById("close-modal").addEventListener("click", function() {
+  document.getElementById("about-modal").style.display = "none";
+});
+
+// Fechar modal clicando fora
+window.addEventListener("click", function(event) {
+  const modal = document.getElementById("about-modal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+// Dados dos produtos
+const products = [
+  {
+    title: "Produto 1",
+    description: "Descrição detalhada do produto 1. Este produto é excelente para uso diário.",
+    model: "Modelo A1",
+    price: "R$ 50,00"
+  },
+  {
+    title: "Produto 2",
+    description: "Descrição detalhada do produto 2. Ideal para profissionais.",
+    model: "Modelo B2",
+    price: "R$ 75,00"
+  },
+  {
+    title: "Produto 3",
+    description: "Descrição detalhada do produto 3. Versátil e durável.",
+    model: "Modelo C3",
+    price: "R$ 100,00"
+  }
+];
+
+// Função para botões de compra
+document.querySelectorAll('.buy-btn:not([disabled])').forEach((btn, index) => {
+  btn.addEventListener('click', function() {
+    const product = products[index];
+    document.getElementById('product-title').textContent = product.title;
+    document.getElementById('product-description').textContent = product.description;
+    document.getElementById('product-model').textContent = product.model;
+    document.getElementById('product-price').textContent = product.price;
+    document.getElementById('product-modal').style.display = 'block';
+  });
+});
+
+// Fechar modal de produto
+document.getElementById('close-product-modal').addEventListener('click', function() {
+  document.getElementById('product-modal').style.display = 'none';
+});
+
+document.getElementById('confirm-buy').addEventListener('click', function() {
+  alert('Compra confirmada! Produto adicionado ao carrinho.');
+  document.getElementById('product-modal').style.display = 'none';
+});
+
+// Fechar modal clicando fora
+window.addEventListener('click', function(event) {
+  const productModal = document.getElementById('product-modal');
+  if (event.target === productModal) {
+    productModal.style.display = 'none';
+  }
+});
+>>>>>>> c263d0b (Desenvolvimento da página principal da loja.)

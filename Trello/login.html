@@ -8,6 +8,7 @@
     <script defer src="login.js"></script>
   </head>
   <body>
+<<<<<<< HEAD
     <header>
       <div class="barra-lateral">
         <h1 id="site-titulo">ShopWeb</h1>
@@ -238,10 +239,23 @@
         </div>
         <button class="btn-primario" onclick="fechar('ajuda')">
           Entendido
+=======
+    <div class="sidebar">
+      <h1 id="site-title">ShopWeb</h1>
+    </div>
+    <div class="login-container">
+      <div class="tabs">
+        <button class="tab-button active" onclick="showTab('login')">
+          Login
+        </button>
+        <button class="tab-button" onclick="showTab('register')">
+          Cadastre-se
+>>>>>>> c263d0b (Desenvolvimento da página principal da loja.)
         </button>
       </div>
     </div>
 
+<<<<<<< HEAD
     <!-- CONFIGURAÇÕES -->
     <div class="overlay" id="overlay-config">
       <div class="painel">
@@ -270,6 +284,20 @@
           </button>
         </div>
         <p class="msg-status" id="config-status"></p>
+=======
+      <div id="login-tab" class="tab-content active">
+        <h2>Login</h2>
+        <form id="login-form">
+          <input type="email" id="login-email" placeholder="Email" required />
+          <input
+            type="password"
+            id="login-password"
+            placeholder="Senha"
+            required
+          />
+          <button type="submit">Entrar</button>
+        </form>
+>>>>>>> c263d0b (Desenvolvimento da página principal da loja.)
       </div>
     </div>
 
