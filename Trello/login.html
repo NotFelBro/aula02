@@ -3,60 +3,344 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - Trello Clone</title>
+    <title>Login - ShopWeb</title>
     <link rel="stylesheet" href="login.css" />
     <script defer src="login.js"></script>
   </head>
   <body>
-    <h1 id="site-title">ShopWeb</h1>
-    <div class="login-container">
-      <div class="tabs">
-        <button class="tab-button active" onclick="showTab('login')">
-          Login
-        </button>
-        <button class="tab-button" onclick="showTab('register')">
-          Cadastre-se
+    <header>
+      <div class="barra-lateral">
+        <h1 id="site-titulo">ShopWeb</h1>
+        <button onclick="abrir('sobre')">Sobre o site</button>
+        <button onclick="abrir('contato')">Contato</button>
+        <button onclick="abrir('ajuda')">Ajuda</button>
+        <button onclick="abrir('config')">Configurações</button>
+        <button onclick="abrir('suporte')">Suporte</button>
+        <button onclick="abrir('feedback')">Feedback</button>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="login-container">
+          <div class="tabela">
+            <button class="tabela-btn ativo" onclick="showTab('login')">
+              Login
+            </button>
+            <button class="tabela-btn" onclick="showTab('registro')">
+              Cadastre-se
+            </button>
+          </div>
+
+          <article>
+            <div id="login-tabela" class="tabela-conteudo ativo">
+              <h2>Login</h2>
+              <form id="login-form">
+                <input
+                  type="email"
+                  id="login-email"
+                  placeholder="Email"
+                  required
+                />
+                <input
+                  type="password"
+                  id="login-password"
+                  placeholder="Senha"
+                  required
+                />
+                <button type="submit">Entrar</button>
+              </form>
+            </div>
+          </article>
+
+          <article>
+            <div id="registro-tabela" class="tabela-conteudo">
+              <h2>Cadastre-se</h2>
+              <form id="registro-form">
+                <input
+                  type="text"
+                  id="registro-nome"
+                  placeholder="Nome completo"
+                  required
+                />
+                <input
+                  type="email"
+                  id="registro-email"
+                  placeholder="Email"
+                  required
+                />
+                <input
+                  type="tel"
+                  id="registro-telefone"
+                  placeholder="Número de telefone"
+                  pattern="[\d\s\(\)\+\-]{7,20}"
+                  required
+                />
+
+                <fieldset class="endereco-grupo">
+                  <legend class="endereco-legend">Endereço de entrega</legend>
+                  <div class="endereco-cep-row">
+                    <input
+                      type="text"
+                      id="registro-cep"
+                      placeholder="CEP"
+                      maxlength="9"
+                      required
+                    />
+                    <button type="button" id="btn-buscar-cep" class="btn-cep">
+                      Buscar
+                    </button>
+                  </div>
+                  <input
+                    type="text"
+                    id="registro-bairro"
+                    placeholder="Bairro"
+                    required
+                  />
+                  <input
+                    type="text"
+                    id="registro-numero"
+                    placeholder="Número"
+                    required
+                  />
+                </fieldset>
+
+                <input
+                  type="password"
+                  id="registro-password"
+                  placeholder="Senha"
+                  required
+                />
+                <input
+                  type="password"
+                  id="registro-confirm-password"
+                  placeholder="Confirmar Senha"
+                  required
+                />
+                <button type="submit">Cadastrar</button>
+              </form>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================== MODAIS DA BARRA LATERAL ===================== -->
+
+    <!-- SOBRE -->
+    <div class="overlay" id="overlay-sobre">
+      <div class="painel">
+        <button class="fechar-painel-btn" onclick="fechar('sobre')">✕</button>
+        <h2 class="painel-titulo">Sobre o ShopWeb</h2>
+        <div class="painel-info-bloco">
+          <span class="painel-icone">🛍️</span>
+          <div>
+            <p class="painel-info-titulo">
+              ShopWeb — sua loja de bicicletas online
+            </p>
+            <p class="painel-info-subtitulo">
+              Fundada em 2024, oferecemos as melhores bicicletas com entrega
+              rápida e segura para todo o Brasil.
+            </p>
+          </div>
+        </div>
+        <p class="campo-label">Versão</p>
+        <p class="campo-valor">v2.1.0 — Março 2026</p>
+        <p class="campo-label">Categorias disponíveis</p>
+        <div class="tags-container">
+          <span class="tag">Infantil</span>
+          <span class="tag">Juvenil</span>
+          <span class="tag">Adulto</span>
+          <span class="tag">Profissional</span>
+        </div>
+        <hr class="separador" />
+        <p class="painel-rodape">
+          Todos os direitos reservados © 2026 ShopWeb.
+        </p>
+        <button class="btn-secundario" onclick="fechar('sobre')">Fechar</button>
+      </div>
+    </div>
+
+    <!-- CONTATO -->
+    <div class="overlay" id="overlay-contato">
+      <div class="painel">
+        <button class="fechar-painel-btn" onclick="fechar('contato')">✕</button>
+        <h2 class="painel-titulo">Entre em contato</h2>
+        <div class="painel-info-bloco">
+          <span class="painel-icone">📧</span>
+          <p class="painel-info-subtitulo">Resposta em até 24h úteis</p>
+        </div>
+        <p class="campo-label">Nome</p>
+        <input
+          type="text"
+          class="campo-input"
+          id="contato-nome"
+          placeholder="Seu nome completo"
+        />
+        <p class="campo-label">E-mail</p>
+        <input
+          type="email"
+          class="campo-input"
+          id="contato-email"
+          placeholder="seu@email.com"
+        />
+        <p class="campo-label">Mensagem</p>
+        <textarea
+          class="campo-input campo-textarea"
+          id="contato-msg"
+          placeholder="Como podemos ajudar?"
+        ></textarea>
+        <div class="painel-acoes">
+          <button class="btn-primario" onclick="enviarContato()">
+            Enviar mensagem
+          </button>
+          <button class="btn-secundario" onclick="fechar('contato')">
+            Cancelar
+          </button>
+        </div>
+        <p class="msg-status" id="contato-status"></p>
+      </div>
+    </div>
+
+    <!-- AJUDA -->
+    <div class="overlay" id="overlay-ajuda">
+      <div class="painel">
+        <button class="fechar-painel-btn" onclick="fechar('ajuda')">✕</button>
+        <h2 class="painel-titulo">Central de ajuda</h2>
+        <div class="painel-info-bloco">
+          <span class="painel-icone">❓</span>
+          <div>
+            <p class="painel-info-titulo">Como faço um pedido?</p>
+            <p class="painel-info-subtitulo">
+              Clique em "Comprar" no produto desejado, confirme no modal e seu
+              item vai direto para o carrinho.
+            </p>
+          </div>
+        </div>
+        <div class="painel-info-bloco">
+          <span class="painel-icone">🚚</span>
+          <div>
+            <p class="painel-info-titulo">Prazos de entrega</p>
+            <p class="painel-info-subtitulo">
+              Regiões Sul e Sudeste: 3–5 dias úteis. Demais regiões: 7–10 dias
+              úteis.
+            </p>
+          </div>
+        </div>
+        <div class="painel-info-bloco">
+          <span class="painel-icone">↩️</span>
+          <div>
+            <p class="painel-info-titulo">Política de devolução</p>
+            <p class="painel-info-subtitulo">
+              Até 7 dias corridos após o recebimento, sem custo adicional.
+            </p>
+          </div>
+        </div>
+        <button class="btn-primario" onclick="fechar('ajuda')">
+          Entendido
         </button>
       </div>
+    </div>
 
-      <div id="login-tab" class="tab-content active">
-        <h2>Login</h2>
-        <form id="login-form">
-          <input type="email" id="login-email" placeholder="Email" required />
-          <input
-            type="password"
-            id="login-password"
-            placeholder="Senha"
-            required
-          />
-            <button type="submit">Entrar</button>
-        </form>
+    <!-- CONFIGURAÇÕES -->
+    <div class="overlay" id="overlay-config">
+      <div class="painel">
+        <button class="fechar-painel-btn" onclick="fechar('config')">✕</button>
+        <h2 class="painel-titulo">Configurações</h2>
+        <p class="campo-label">Idioma</p>
+        <select class="campo-input" id="cfg-idioma">
+          <option>Português (BR)</option>
+          <option>English</option>
+          <option>Español</option>
+        </select>
+        <p class="campo-label">Notificações</p>
+        <label class="linha-check">
+          <input type="checkbox" id="notif-email" checked />
+          Notificações por e-mail
+        </label>
+        <label class="linha-check">
+          <input type="checkbox" id="notif-promo" />
+          Promoções e novidades
+        </label>
+        <hr class="separador" />
+        <div class="painel-acoes">
+          <button class="btn-primario" onclick="salvarConfig()">Salvar</button>
+          <button class="btn-secundario" onclick="fechar('config')">
+            Cancelar
+          </button>
+        </div>
+        <p class="msg-status" id="config-status"></p>
       </div>
+    </div>
 
-      <div id="register-tab" class="tab-content">
-        <h2>Cadastre-se</h2>
-        <form id="register-form">
-          <input type="text" id="register-name" placeholder="Nome" required />
-          <input
-            type="email"
-            id="register-email"
-            placeholder="Email"
-            required
-          />
-          <input
-            type="password"
-            id="register-password"
-            placeholder="Senha"
-            required
-          />
-          <input
-            type="password"
-            id="register-confirm-password"
-            placeholder="Confirmar Senha"
-            required
-          />
-          <button type="submit">Cadastrar</button>
-        </form>
+    <!-- SUPORTE -->
+    <div class="overlay" id="overlay-suporte">
+      <div class="painel">
+        <button class="fechar-painel-btn" onclick="fechar('suporte')">✕</button>
+        <h2 class="painel-titulo">Suporte técnico</h2>
+        <div class="painel-info-bloco">
+          <span class="painel-icone">💬</span>
+          <div>
+            <p class="painel-info-titulo">Atendimento via chat</p>
+            <p class="painel-info-subtitulo">
+              Seg–Sex, 9h–18h. Tempo médio de resposta: 5 minutos.
+            </p>
+          </div>
+        </div>
+        <p class="campo-label">Descreva o problema</p>
+        <textarea
+          class="campo-input campo-textarea"
+          id="suporte-msg"
+          placeholder="Ex: não consigo finalizar minha compra..."
+        ></textarea>
+        <p class="campo-label">Nível de urgência</p>
+        <select class="campo-input" id="suporte-urgencia">
+          <option>Baixo — pode esperar</option>
+          <option>Médio — preciso hoje</option>
+          <option>Alto — urgente</option>
+        </select>
+        <div class="painel-acoes">
+          <button class="btn-primario" onclick="abrirChamado()">
+            Abrir chamado
+          </button>
+          <button class="btn-secundario" onclick="fechar('suporte')">
+            Cancelar
+          </button>
+        </div>
+        <p class="msg-status" id="suporte-status"></p>
+      </div>
+    </div>
+
+    <!-- FEEDBACK -->
+    <div class="overlay" id="overlay-feedback">
+      <div class="painel">
+        <button class="fechar-painel-btn" onclick="fechar('feedback')">
+          ✕
+        </button>
+        <h2 class="painel-titulo">Deixe seu feedback</h2>
+        <p class="campo-label">Como você avalia o ShopWeb?</p>
+        <div class="estrelas" id="estrelas">
+          <span class="estrela" data-v="1" onclick="definirNota(1)">★</span>
+          <span class="estrela" data-v="2" onclick="definirNota(2)">★</span>
+          <span class="estrela" data-v="3" onclick="definirNota(3)">★</span>
+          <span class="estrela" data-v="4" onclick="definirNota(4)">★</span>
+          <span class="estrela" data-v="5" onclick="definirNota(5)">★</span>
+        </div>
+        <p class="campo-label">Comentário (opcional)</p>
+        <textarea
+          class="campo-input campo-textarea"
+          id="feedback-msg"
+          placeholder="Nos conte sua experiência..."
+        ></textarea>
+        <div class="painel-acoes">
+          <button class="btn-primario" onclick="enviarFeedback()">
+            Enviar feedback
+          </button>
+          <button class="btn-secundario" onclick="fechar('feedback')">
+            Cancelar
+          </button>
+        </div>
+        <p class="msg-status" id="feedback-status"></p>
       </div>
     </div>
   </body>

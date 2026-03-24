@@ -3,7 +3,601 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - Trello Clone</title>
+    <title>Página Principal - ShopWeb</title>
+    <link rel="stylesheet" href="página.css" />
+    <script defer src="página.js"></script>
   </head>
-  <body></body>
-</html>
+  <body>
+    <header class="top-bar">
+      <button id="barra-lateral-click" class="click-btn">☰</button>
+      <h1>ShopWeb</h1>
+      <nav class="top-nav">
+        <button id="perfil-btn-top" onclick="abrir('perfil')">Perfil</button>
+        <button id="sair-btn-top">Sair</button>
+        <button id="carrinho-btn-top" onclick="abrir('carrinho')">
+          Carrinho
+        </button>
+        <button id="lista-desejos-btn" onclick="abrir('desejos')">
+          Lista de Desejos
+        </button>
+      </nav>
+    </header>
+
+    <aside>
+      <div class="barra-lateral">
+        <button id="sobre-btn" onclick="abrir('sobre')">Sobre o site</button>
+        <button id="contato-btn" onclick="abrir('contato')">Contato</button>
+        <button id="ajuda-btn" onclick="abrir('ajuda')">Ajuda</button>
+        <button id="config-btn" onclick="abrir('config')">Configurações</button>
+        <button id="suporte-btn" onclick="abrir('suporte')">Suporte</button>
+        <button id="feedback-btn" onclick="abrir('feedback')">Feedback</button>
+      </div>
+    </aside>
+
+    <main>
+      <section class="secao-produtos">
+
+        <!-- ===== FILEIRA 1: DISPONÍVEIS ===== -->
+        <div class="produto-disponivel">
+          <h2>Produtos Disponíveis</h2>
+          <div class="produto-grid">
+
+            <!-- Produto 1 -->
+            <div class="produto">
+              <div class="produto-img-wrap">
+                <img src="bicicleta.jpeg" alt="Bicicleta Infantil" class="produto-img" />
+                <button class="wishlist-btn" data-title="Bicicleta Infantil" data-model="Modelo A1" data-price="R$ 50,00" title="Adicionar à lista de desejos">♡</button>
+                <span class="produto-badge">Disponível</span>
+              </div>
+              <div class="produto-info">
+                <p class="produto-categoria">Infantil · Modelo A1</p>
+                <h3>Bicicleta Infantil</h3>
+                <p class="produto-desc">Bicicleta infantil para crianças</p>
+                <div class="produto-footer">
+                  <span class="produto-preco">R$ 50,00</span>
+                  <div class="produto-acoes">
+                    <button class="buy-btn" title="Ver detalhes">Comprar</button>
+                    <button class="cart-btn" onclick="adicionarAoCarrinho({title:'Bicicleta Infantil',model:'Modelo A1',price:'R$ 50,00'});abrir('carrinho')" title="Adicionar ao carrinho">🛒</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="produto">
+              <div class="produto-img-wrap">
+                <img src="bikeadulto.jpeg" alt="Bicicleta Mediana" class="produto-img" />
+                <button class="wishlist-btn" data-title="Bicicleta Mediana" data-model="Modelo B2" data-price="R$ 75,00" title="Adicionar à lista de desejos">♡</button>
+                <span class="produto-badge">Disponível</span>
+              </div>
+              <div class="produto-info">
+                <p class="produto-categoria">Adulto · Modelo B2</p>
+                <h3>Bicicleta Mediana</h3>
+                <p class="produto-desc">Bicicleta de médio desempenho para adolescentes e adultos</p>
+                <div class="produto-footer">
+                  <span class="produto-preco">R$ 75,00</span>
+                  <div class="produto-acoes">
+                    <button class="buy-btn" title="Ver detalhes">Comprar</button>
+                    <button class="cart-btn" onclick="adicionarAoCarrinho({title:'Bicicleta Mediana',model:'Modelo B2',price:'R$ 75,00'});abrir('carrinho')" title="Adicionar ao carrinho">🛒</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="produto">
+              <div class="produto-img-wrap">
+                <img src="prof.jpeg" alt="Bicicleta Pro" class="produto-img" />
+                <button class="wishlist-btn" data-title="Bicicleta Pro" data-model="Modelo C3" data-price="R$ 100,00" title="Adicionar à lista de desejos">♡</button>
+                <span class="produto-badge">Disponível</span>
+              </div>
+              <div class="produto-info">
+                <p class="produto-categoria">Profissional · Modelo C3</p>
+                <h3>Bicicleta Pro</h3>
+                <p class="produto-desc">Bicicleta Profissional para ciclistas experientes</p>
+                <div class="produto-footer">
+                  <span class="produto-preco">R$ 100,00</span>
+                  <div class="produto-acoes">
+                    <button class="buy-btn" title="Ver detalhes">Comprar</button>
+                    <button class="cart-btn" onclick="adicionarAoCarrinho({title:'Bicicleta Pro',model:'Modelo C3',price:'R$ 100,00'});abrir('carrinho')" title="Adicionar ao carrinho">🛒</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ===== FILEIRA 2: ESGOTADOS ===== -->
+        <div class="produto-esgotado">
+          <h2>Produtos Esgotados</h2>
+          <div class="produto-grid">
+
+            <!-- Sem Estoque 1 -->
+            <div class="produto produto-estoque">
+              <div class="produto-img-wrap">
+                <img src="estoque.jpeg" alt="Sem estoque" class="produto-img" />
+                <span class="produto-badge badge-esgotado">Esgotado</span>
+              </div>
+              <div class="produto-info">
+                <p class="produto-categoria">— · —</p>
+                <h3>Sem modelos</h3>
+                <p class="produto-desc">Sem produto em estoque</p>
+                <div class="produto-footer">
+                  <span class="produto-preco">R$ 60,00</span>
+                  <div class="produto-acoes">
+                    <button class="buy-btn" disabled>Esgotado</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sem Estoque 2 -->
+            <div class="produto produto-estoque">
+              <div class="produto-img-wrap">
+                <img src="estoque.jpeg" alt="Sem estoque" class="produto-img" />
+                <span class="produto-badge badge-esgotado">Esgotado</span>
+              </div>
+              <div class="produto-info">
+                <p class="produto-categoria">— · —</p>
+                <h3>Sem modelos</h3>
+                <p class="produto-desc">Sem produto em estoque</p>
+                <div class="produto-footer">
+                  <span class="produto-preco">R$ 80,00</span>
+                  <div class="produto-acoes">
+                    <button class="buy-btn" disabled>Esgotado</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sem Estoque 3 -->
+            <div class="produto produto-estoque">
+              <div class="produto-img-wrap">
+                <img src="estoque.jpeg" alt="Sem estoque" class="produto-img" />
+                <span class="produto-badge badge-esgotado">Esgotado</span>
+              </div>
+              <div class="produto-info">
+                <p class="produto-categoria">— · —</p>
+                <h3>Sem modelos</h3>
+                <p class="produto-desc">Sem produto em estoque</p>
+                <div class="produto-footer">
+                  <span class="produto-preco">R$ 120,00</span>
+                  <div class="produto-acoes">
+                    <button class="buy-btn" disabled>Esgotado</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Modal: detalhe do produto -->
+      <div id="modelo-produto" class="modelo">
+        <div class="modelo-conteudo detalhe-produto">
+          <h2 id="titulo-produto"></h2>
+          <p id="descricao-produto"></p>
+          <p><strong>Modelo:</strong> <span id="span-modelo-produto"></span></p>
+          <p><strong>Preço:</strong> <span id="produto-preco"></span></p>
+          <p><strong>Desconto na primeira compra:</strong> 10% off</p>
+          <button id="confirm-buy">Comprar</button>
+          <button id="fechar-modelo-produto">Sair</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===================== MODAIS DA BARRA LATERAL ===================== -->
+
+    <!-- SOBRE -->
+    <div class="overlay" id="overlay-sobre">
+      <div class="painel">
+        <button class="fechar-painel-btn" onclick="fechar('sobre')">✕</button>
+        <h2 class="painel-titulo">Sobre o ShopWeb</h2>
+
+        <div class="painel-info-bloco">
+          <span class="painel-icone">🛍️</span>
+          <div>
+            <p class="painel-info-titulo">
+              ShopWeb — sua loja de bicicletas online
+            </p>
+            <p class="painel-info-subtitulo">
+              Fundada em 2024, oferecemos as melhores bicicletas com entrega
+              rápida e segura para todo o Brasil.
+            </p>
+          </div>
+        </div>
+
+        <p class="campo-label">Versão</p>
+        <p class="campo-valor">v2.1.0 — Março 2026</p>
+
+        <p class="campo-label">Categorias disponíveis</p>
+        <div class="tags-container">
+          <span class="tag">Infantil</span>
+          <span class="tag">Juvenil</span>
+          <span class="tag">Adulto</span>
+          <span class="tag">Profissional</span>
+        </div>
+
+        <hr class="separador" />
+        <p class="painel-rodape">
+          Todos os direitos reservados © 2026 ShopWeb.
+        </p>
+        <button class="btn-secundario" onclick="fechar('sobre')">Fechar</button>
+      </div>
+    </div>
+
+    <!-- CONTATO -->
+    <div class="overlay" id="overlay-contato">
+      <div class="painel">
+        <button class="fechar-painel-btn" onclick="fechar('contato')">✕</button>
+        <h2 class="painel-titulo">Entre em contato</h2>
+
+        <div class="painel-info-bloco">
+          <span class="painel-icone">📧</span>
+          <p class="painel-info-subtitulo">Resposta em até 24h úteis</p>
+        </div>
+
+        <p class="campo-label">Nome</p>
+        <input
+          type="text"
+          class="campo-input"
+          id="contato-nome"
+          placeholder="Seu nome completo"
+        />
+
+        <p class="campo-label">E-mail</p>
+        <input
+          type="email"
+          class="campo-input"
+          id="contato-email"
+          placeholder="seu@email.com"
+        />
+
+        <p class="campo-label">Mensagem</p>
+        <textarea
+          class="campo-input campo-textarea"
+          id="contato-msg"
+          placeholder="Como podemos ajudar?"
+        ></textarea>
+
+        <div class="painel-acoes">
+          <button class="btn-primario" onclick="enviarContato()">
+            Enviar mensagem
+          </button>
+          <button class="btn-secundario" onclick="fechar('contato')">
+            Cancelar
+          </button>
+        </div>
+        <p class="msg-status" id="contato-status"></p>
+      </div>
+    </div>
+
+    <!-- AJUDA -->
+    <div class="overlay" id="overlay-ajuda">
+      <div class="painel">
+        <button class="fechar-painel-btn" onclick="fechar('ajuda')">✕</button>
+        <h2 class="painel-titulo">Central de ajuda</h2>
+
+        <div class="painel-info-bloco">
+          <span class="painel-icone">❓</span>
+          <div>
+            <p class="painel-info-titulo">Como faço um pedido?</p>
+            <p class="painel-info-subtitulo">
+              Clique em "Comprar" no produto desejado, confirme no modal e seu
+              item vai direto para o carrinho.
+            </p>
+          </div>
+        </div>
+
+        <div class="painel-info-bloco">
+          <span class="painel-icone">🚚</span>
+          <div>
+            <p class="painel-info-titulo">Prazos de entrega</p>
+            <p class="painel-info-subtitulo">
+              Regiões Sul e Sudeste: 3–5 dias úteis. Demais regiões: 7–10 dias
+              úteis.
+            </p>
+          </div>
+        </div>
+
+        <div class="painel-info-bloco">
+          <span class="painel-icone">↩️</span>
+          <div>
+            <p class="painel-info-titulo">Política de devolução</p>
+            <p class="painel-info-subtitulo">
+              Até 7 dias corridos após o recebimento, sem custo adicional.
+            </p>
+          </div>
+        </div>
+
+        <button class="btn-primario" onclick="fechar('ajuda')">
+          Entendido
+        </button>
+      </div>
+    </div>
+
+    <!-- CONFIGURAÇÕES -->
+    <div class="overlay" id="overlay-config">
+      <div class="painel">
+        <button class="fechar-painel-btn" onclick="fechar('config')">✕</button>
+        <h2 class="painel-titulo">Configurações</h2>
+
+        <p class="campo-label">Idioma</p>
+        <select class="campo-input" id="cfg-idioma">
+          <option>Português (BR)</option>
+          <option>English</option>
+          <option>Español</option>
+        </select>
+
+        <p class="campo-label">Tema</p>
+        <div class="grupo-botoes">
+          <button
+            class="btn-tema ativo"
+            id="tema-claro"
+            onclick="definirTema('claro')"
+          >
+            ☀️ Claro
+          </button>
+          <button
+            class="btn-tema"
+            id="tema-escuro"
+            onclick="definirTema('escuro')"
+          >
+            🌙 Escuro
+          </button>
+        </div>
+
+        <p class="campo-label" style="margin-top: 1rem">Notificações</p>
+        <label class="linha-check">
+          <input type="checkbox" id="notif-email" checked />
+          Notificações por e-mail
+        </label>
+        <label class="linha-check">
+          <input type="checkbox" id="notif-promo" />
+          Promoções e novidades
+        </label>
+
+        <hr class="separador" />
+        <div class="painel-acoes">
+          <button class="btn-primario" onclick="salvarConfig()">Salvar</button>
+          <button class="btn-secundario" onclick="fechar('config')">
+            Cancelar
+          </button>
+        </div>
+        <p class="msg-status" id="config-status"></p>
+      </div>
+    </div>
+
+    <!-- SUPORTE -->
+    <div class="overlay" id="overlay-suporte">
+      <div class="painel">
+        <button class="fechar-painel-btn" onclick="fechar('suporte')">✕</button>
+        <h2 class="painel-titulo">Suporte técnico</h2>
+
+        <div class="painel-info-bloco">
+          <span class="painel-icone">💬</span>
+          <div>
+            <p class="painel-info-titulo">Atendimento via chat</p>
+            <p class="painel-info-subtitulo">
+              Seg–Sex, 9h–18h. Tempo médio de resposta: 5 minutos.
+            </p>
+          </div>
+        </div>
+
+        <p class="campo-label">Descreva o problema</p>
+        <textarea
+          class="campo-input campo-textarea"
+          id="suporte-msg"
+          placeholder="Ex: não consigo finalizar minha compra..."
+        ></textarea>
+
+        <p class="campo-label">Nível de urgência</p>
+        <select class="campo-input" id="suporte-urgencia">
+          <option>Baixo — pode esperar</option>
+          <option>Médio — preciso hoje</option>
+          <option>Alto — urgente</option>
+        </select>
+
+        <div class="painel-acoes">
+          <button class="btn-primario" onclick="abrirChamado()">
+            Abrir chamado
+          </button>
+          <button class="btn-secundario" onclick="fechar('suporte')">
+            Cancelar
+          </button>
+        </div>
+        <p class="msg-status" id="suporte-status"></p>
+      </div>
+    </div>
+
+    <!-- FEEDBACK -->
+    <div class="overlay" id="overlay-feedback">
+      <div class="painel">
+        <button class="fechar-painel-btn" onclick="fechar('feedback')">
+          ✕
+        </button>
+        <h2 class="painel-titulo">Deixe seu feedback</h2>
+
+        <p class="campo-label">Como você avalia o ShopWeb?</p>
+        <div class="estrelas" id="estrelas">
+          <span class="estrela" data-v="1" onclick="definirNota(1)">★</span>
+          <span class="estrela" data-v="2" onclick="definirNota(2)">★</span>
+          <span class="estrela" data-v="3" onclick="definirNota(3)">★</span>
+          <span class="estrela" data-v="4" onclick="definirNota(4)">★</span>
+          <span class="estrela" data-v="5" onclick="definirNota(5)">★</span>
+        </div>
+
+        <p class="campo-label">Comentário (opcional)</p>
+        <textarea
+          class="campo-input campo-textarea"
+          id="feedback-msg"
+          placeholder="Nos conte sua experiência..."
+        ></textarea>
+
+        <div class="painel-acoes">
+          <button class="btn-primario" onclick="enviarFeedback()">
+            Enviar feedback
+          </button>
+          <button class="btn-secundario" onclick="fechar('feedback')">
+            Cancelar
+          </button>
+        </div>
+        <p class="msg-status" id="feedback-status"></p>
+      </div>
+    </div>
+
+    <!-- PERFIL -->
+    <div class="overlay" id="overlay-perfil">
+      <div class="painel painel-largo">
+        <button class="fechar-painel-btn" onclick="fechar('perfil')">
+          &#x2715;
+        </button>
+        <h2 class="painel-titulo">Meu Perfil</h2>
+        <div class="perfil-avatar-row">
+          <div class="perfil-avatar" id="perfil-avatar-inicial">JD</div>
+          <div>
+            <p class="painel-info-titulo" id="perfil-nome-exibido">
+              Jo&#xE3;o da Silva
+            </p>
+            <p class="painel-info-subtitulo" id="perfil-email-exibido">
+              <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5d37323c321d38303c3431733e3230">[email&#160;protected]</a>
+            </p>
+            <span class="tag">Membro desde 2024</span>
+          </div>
+        </div>
+        <hr class="separador" />
+        <p class="campo-label">Nome completo</p>
+        <input
+          type="text"
+          class="campo-input"
+          id="perfil-nome"
+          value="Jo&#xE3;o da Silva"
+        />
+        <p class="campo-label">E-mail</p>
+        <input
+          type="email"
+          class="campo-input"
+          id="perfil-email"
+          value="joao@email.com"
+        />
+        <p class="campo-label">Telefone</p>
+        <input
+          type="tel"
+          class="campo-input"
+          id="perfil-telefone"
+          placeholder="(11) 99999-9999"
+        />
+        <p class="campo-label">Endere&#xE7;o de entrega</p>
+        <input
+          type="text"
+          class="campo-input"
+          id="perfil-endereco"
+          placeholder="Bairro, n&#xFA;mero, CEP..."
+        />
+        <hr class="separador" />
+        <div class="painel-info-bloco">
+          <span class="painel-icone">&#x1F512;</span>
+          <div>
+            <p class="painel-info-titulo">Alterar senha</p>
+            <p class="painel-info-subtitulo">
+              Por seguran&#xE7;a, enviaremos um link de redefini&#xE7;&#xE3;o
+              para seu e-mail.
+            </p>
+          </div>
+        </div>
+        <div class="painel-acoes">
+          <button class="btn-primario" onclick="salvarPerfil()">
+            Salvar altera&#xE7;&#xF5;es
+          </button>
+          <button class="btn-secundario" onclick="fechar('perfil')">
+            Fechar
+          </button>
+        </div>
+        <p class="msg-status" id="perfil-status"></p>
+      </div>
+    </div>
+
+    <!-- CARRINHO -->
+    <div class="overlay" id="overlay-carrinho">
+      <div class="painel painel-largo">
+        <button class="fechar-painel-btn" onclick="fechar('carrinho')">
+          &#x2715;
+        </button>
+        <h2 class="painel-titulo">Meu Carrinho</h2>
+        <div id="carrinho-vazio" class="carrinho-vazio">
+          <span class="carrinho-vazio-icone">&#x1F6D2;</span>
+          <p>Seu carrinho est&#xE1; vazio.</p>
+          <p class="painel-info-subtitulo">
+            Adicione produtos clicando em &quot;Comprar&quot;.
+          </p>
+          <button
+            class="btn-secundario"
+            onclick="fechar('carrinho')"
+            style="margin-top: 1rem"
+          >
+            Fechar
+          </button>
+        </div>
+        <div id="carrinho-lista"></div>
+        <div id="carrinho-rodape" style="display: none">
+          <hr class="separador" />
+          <div class="carrinho-total-row">
+            <span class="campo-label">Total</span>
+            <span class="carrinho-total-valor" id="carrinho-total"
+              >R$ 0,00</span
+            >
+          </div>
+          <div class="painel-acoes" style="margin-top: 1rem">
+            <button class="btn-primario" onclick="finalizarPedido()">
+              Finalizar pedido
+            </button>
+            <button class="btn-secundario" onclick="limparCarrinho()">
+              Limpar carrinho
+            </button>
+            <button class="btn-secundario" onclick="fechar('carrinho')">
+              Fechar
+            </button>
+          </div>
+          <p class="msg-status" id="carrinho-status"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LISTA DE DESEJOS -->
+    <div class="overlay" id="overlay-desejos">
+      <div class="painel painel-largo">
+        <button class="fechar-painel-btn" onclick="fechar('desejos')">
+          &#x2715;
+        </button>
+        <h2 class="painel-titulo">Lista de Desejos</h2>
+        <div id="desejos-vazio" class="carrinho-vazio">
+          <span class="carrinho-vazio-icone">&#x2764;&#xFE0F;</span>
+          <p>Sua lista est&#xE1; vazia.</p>
+          <p class="painel-info-subtitulo">
+            Salve produtos que voc&#xEA; quer comprar depois.
+          </p>
+          <button
+            class="btn-secundario"
+            onclick="fechar('desejos')"
+            style="margin-top: 1rem"
+          >
+            Fechar
+          </button>
+        </div>
+        <div id="desejos-lista"></div>
+        <div id="desejos-rodape" style="display: none">
+          <hr class="separador" />
+          <div class="painel-acoes">
+            <button class="btn-primario" onclick="moverTudoCarrinho()">
+              Mover tudo para o carrinho
+            </button>
+            <button class="btn-secundario" onclick="limparDesejos()">
+              Limpar lista
+            </button>
+            <button class="btn-secundario" onclick="fechar('desejos')">
+              Fechar
+            </button>
+          </di
