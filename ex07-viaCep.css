@@ -1,0 +1,58 @@
+body {
+  background: fixed
+    linear-gradient(to bottom, rgb(173, 191, 252), rgb(82, 82, 228));
+}
+
+#buscarbtn {
+  color: rgb(230, 227, 227);
+  background-color: blue;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#buscarbtn:hover {
+  background-color: blueviolet;
+}
+
+#cep {
+  background-color: rgb(219, 235, 248);
+}
+
+.linha {
+  padding: 1px;
+  background: fixed rgb(0, 0, 0);
+}
+
+.linha:hover {
+  background: fixed rgb(157, 200, 250);
+}
+
+.linha2 {
+  padding: 1.5px;
+  background: fixed black;
+}
+
+.linha2:hover {
+  background: fixed rgb(157, 200, 250);
+}
+
+#cidade {
+  font-size: larger;
+}
+
+#bairro {
+  font-size: larger;
+}
+
+#rua {
+  font-size: larger;
+}
+
+#numero {
+  font-size: larger;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(68, 0, 253);
+}
